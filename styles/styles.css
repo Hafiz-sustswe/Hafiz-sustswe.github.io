@@ -1070,3 +1070,65 @@ section {
     font-size: 4rem;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+/* Publication count in title */
+.pub-count {
+    font-size: 1.2rem;
+    color: #27ae60;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Publication stats section */
+.pub-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 15px;
+    min-width: 120px;
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.stat-box p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Bold your name in author lists */
+.blog-text1 b {
+    color: #27ae60;
+}
+
+/* Responsive design for publication stats */
+@media (max-width: 768px) {
+    .pub-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .pub-count {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
