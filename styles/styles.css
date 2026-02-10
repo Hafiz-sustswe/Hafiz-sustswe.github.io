@@ -1069,9 +1069,8 @@ section {
   .main-title h2 .bg-text {
     font-size: 4rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
 
-/* Publication count in title */
 .pub-count {
     font-size: 1.2rem;
     color: #27ae60;
@@ -1109,12 +1108,11 @@ section {
     opacity: 0.9;
 }
 
-/* Bold your name in author lists */
+
 .blog-text1 b {
     color: #27ae60;
 }
 
-/* Responsive design for publication stats */
 @media (max-width: 768px) {
     .pub-stats {
         flex-direction: column;

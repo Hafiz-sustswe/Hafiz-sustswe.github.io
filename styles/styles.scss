@@ -733,7 +733,6 @@ section {
 }
 
 
-/*Independed components*/
 .btn-con {
     display: flex;
     align-self: flex-start;
@@ -742,6 +741,8 @@ section {
     display: none;
     margin-left: 50cm;
 }
+
+/* BUTTON FIXES - ADD/UPDATE THESE RULES */
 .main-btn {
     border-radius: 30px;
     color: inherit;
@@ -752,7 +753,11 @@ section {
     align-self: flex-start;
     align-items: center;
     overflow: hidden;
-    .btn-text { padding: 0 2rem; }
+    cursor: pointer;
+    .btn-text { 
+        padding: 0 2rem; 
+        background-color: transparent;
+    }
     .btn-icon {
         background-color: var(--color-secondary);
         display: flex;
@@ -770,17 +775,46 @@ section {
         transition: all .4s ease-out;
         z-index: -1;
     }
-    &:hover {
-        transition: all .4s ease-out;
-        &::before {
-            width: 100%;
-            height: 100%;
-            background-color: var(--color-secondary);
-            transform: translateX(0);
-            transition: all .4s ease-out;
-        }
-    }
+}
 
+.main-btn:not(.disabled):not([disabled]):hover {
+    transition: all .4s ease-out;
+    &::before {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        transform: translateX(0);
+        transition: all .4s ease-out;
+    }
+}
+
+.main-btn.disabled,
+.main-btn[disabled] {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+
+.main-btn.disabled:hover::before,
+.main-btn[disabled]:hover::before {
+    transform: translateX(100%) !important;
+    transition: none !important;
+}
+
+.main-btn.disabled:hover,
+.main-btn[disabled]:hover {
+    transition: none !important;
+}
+
+
+button.main-btn {
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+    outline: none;
+    font-family: inherit;
+    border: 1px solid var(--color-secondary);
 }
 
 .main-title {
@@ -805,4 +839,47 @@ section {
     }
 }
 
+.form-message {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+
+.fa-spin {
+    animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.input-control input:focus,
+.input-control textarea:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
 @import './media';
+
+
+
